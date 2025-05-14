@@ -108,7 +108,7 @@ message GetUserByIDRequest {
 }
 
 message UpdateUserByIDRequest {
-    string user_id = 1;
+    string id = 1;
     string email = 2;
     string username = 3;
     string phone = 4;
@@ -118,7 +118,7 @@ message UpdateUserByIDRequest {
 }
 
 message DeleteUserByIDRequest {
-    string user_id = 1;
+    string id = 1;
 }
 
 // Favorites
@@ -154,9 +154,10 @@ message GetPocketsByUserIDRequest {
 }
 
 message UpdatePocketByIDRequest {
-    string name = 1;
-    string category = 2;
-    int32 max_amount = 3;
+    string id = 1;
+    string name = 2;
+    string category = 3;
+    int32 max_amount = 4;
 }
 
 message DeletePocketByIDRequest {
