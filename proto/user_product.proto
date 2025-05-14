@@ -15,7 +15,7 @@ service UserService {
     // User Management
     rpc CreateUser(CreateUserRequest) returns (User) {}
     rpc GetUserByID(GetUserByIDRequest) returns (User) {}
-    rpc UpdateUserProfile(UpdateUserProfileRequest) returns (User) {}
+    rpc UpdateUserByID(UpdateUserByIDRequest) returns (User) {}
     rpc DeleteUserByID(DeleteUserByIDRequest) returns (DeleteResponse) {}
 
     // Favorites Management
@@ -88,11 +88,60 @@ message User {
 }
 
 // -----------------------------------------------------------------------------
-// Messages: Requests and Responses
+// Messages: Requests
 // -----------------------------------------------------------------------------
 
 // @Trigger: This is like the standard way to treat requests and responses.
 
+// Users
+message CreateUserRequest {
+    string email = 1;
+    string username = 2;
+    string phone = 3;
+    string first_name = 4;
+    string last_name = 5;
+    string birthdate = 6;
+}
+
+message GetUserByIDRequest {
+    string user_id = 1;
+}
+
+message UpdateUserByIDRequest {
+    string user_id = 1;
+    string email = 2;
+    string username = 3;
+    string phone = 4;
+    string first_name = 5;
+    string last_name = 6;
+    string birthdate = 7;
+}
+
+message DeleteUserByIDRequest {
+    string user_id = 1;
+}
+
+// Favorites
+message CreateFavoriteRequest {
+    string user_id = 1;
+    string favorite_user_id = 2;
+    string alias = 3;
+}
+
+message GetFavoritesByUserIDRequest {
+    string user_id = 1;
+}
+
+message UpdateFavoriteByIDRequest {
+    string id = 1;
+    string alias = 2;
+}
+
+message DeleteFavoriteByIDRequest {
+    string id = 1;
+}
+
+//Pockets
 message CreatePocketRequest {
     string user_id = 1;
     string name = 2;
@@ -100,14 +149,33 @@ message CreatePocketRequest {
     int32 max_amount = 4;
 }
 
-message GetPocketByIDRequest {
+message GetPocketsByUserIDRequest {
+    string user_id = 1;
+}
+
+message UpdatePocketByIDRequest {
+    string name = 1;
+    string category = 2;
+    int32 max_amount = 3;
+}
+
+message DeletePocketByIDRequest {
     string id = 1;
 }
 
 // @Trigger: requests above and responses above, to separate them better.
+// -----------------------------------------------------------------------------
+// Messages: Responses
+// -----------------------------------------------------------------------------
+
+message GetFavoritesByUserIDResponse {
+    repeated Favorite favorites = 1;
+}
 
 message GetPocketsByUserIDResponse {
     repeated Pocket pockets = 1;
 }
 
-
+message DeleteResponse {
+    bool success = 1;
+}
