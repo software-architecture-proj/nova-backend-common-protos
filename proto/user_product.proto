@@ -1,6 +1,6 @@
 syntax = "proto3"
 
-option go_package = "module github.com/software-architecture-proj/nova-backend-user-product-service/proto"; // Go package for generated code
+option go_package = "module github.com/software-architecture-proj/nova-backend-common-protos/proto"; // Go package for generated code
 
 package user_product; // Protobuf package name
 
@@ -12,10 +12,25 @@ package user_product; // Protobuf package name
 // @Trigger: I think we can do all methods here, as doing separate services
 // for pockets, countrycode and verification seems unnecessary to me.
 service UserService {
-  // User Management
-  rpc CreateUser(CreateUserRequest) returns (User) {}
-  rpc GetUserByID(GetUserByIDRequest) returns (User) {}
-  rpc UpdateUserProfile(UpdateUserProfileRequest) returns (User) {}
+    // User Management
+    rpc CreateUser(CreateUserRequest) returns (User) {}
+    rpc GetUserByID(GetUserByIDRequest) returns (User) {}
+    rpc UpdateUserProfile(UpdateUserProfileRequest) returns (User) {}
+    rpc DeleteUserByID(DeleteUserByIDRequest) returns (DeleteResponse) {}
+
+    // Favorites Management
+    rpc CreateFavorite(CreateFavoriteRequest) returns (Favorite) {}
+    rpc GetFavoritesByUserID(GetFavoritesByUserIDRequest) returns (GetFavoritesByUserIDResponse) {}
+    rpc UpdateFavoriteByID(UpdateFavoriteByIDRequest) returns (Favorite) {}
+    rpc DeleteFavoriteByID(DeleteFavoriteByIDRequest) returns (DeleteResponse) {}
+
+    // Pockets Management
+    rpc CreatePocket(CreatePocketRequest) returns (Pocket) {}
+    rpc GetPocketsByUserID(GetPocketsByUserIDRequest) returns (GetPocketsByUserIDResponse) {}
+    rpc UpdatePocketByID(UpdatePocketByIDRequest) returns (Pocket) {}
+    rpc DeletePocketByID(DeletePocketByIDRequest) returns (DeleteResponse) {}
+
+    // 
 }
 
 
@@ -65,10 +80,11 @@ message User {
     string first_name = 5;
     string last_name = 6;
     string birthdate = 7;
-
-    repeated Favorite favorites = 8;
-    repeated Pocket pockets = 9;
-    Verification verification = 10;
+    
+    // @trigger: Seems more natural to bring this information with the 
+    // user's information than on it's own in another data structure.
+    string verification_type = 8;
+    string verification_status = 9;
 }
 
 // -----------------------------------------------------------------------------
