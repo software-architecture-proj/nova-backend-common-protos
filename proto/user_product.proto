@@ -1,4 +1,4 @@
-syntax = "proto3"
+syntax = "proto3";
 
 option go_package = "module github.com/software-architecture-proj/nova-backend-common-protos/proto"; // Go package for generated code
 
@@ -14,21 +14,21 @@ package user_product; // Protobuf package name
 service UserService {
     // User Management
     rpc CreateUser(CreateUserRequest) returns (User) {}
-    rpc GetUserByID(GetUserByIDRequest) returns (User) {}
-    rpc UpdateUserByID(UpdateUserByIDRequest) returns (User) {}
-    rpc DeleteUserByID(DeleteUserByIDRequest) returns (DeleteResponse) {}
+    rpc GetUserById(GetUserByIdRequest) returns (User) {}
+    rpc UpdateUserById(UpdateUserByIdRequest) returns (User) {}
+    rpc DeleteUserById(DeleteUserByIdRequest) returns (DeleteResponse) {}
 
     // Favorites Management
     rpc CreateFavorite(CreateFavoriteRequest) returns (Favorite) {}
-    rpc GetFavoritesByUserID(GetFavoritesByUserIDRequest) returns (GetFavoritesByUserIDResponse) {}
-    rpc UpdateFavoriteByID(UpdateFavoriteByIDRequest) returns (Favorite) {}
-    rpc DeleteFavoriteByID(DeleteFavoriteByIDRequest) returns (DeleteResponse) {}
+    rpc GetFavoritesByUserId(GetFavoritesByUserIdRequest) returns (GetFavoritesByUserIdResponse) {}
+    rpc UpdateFavoriteById(UpdateFavoriteByIdRequest) returns (Favorite) {}
+    rpc DeleteFavoriteById(DeleteFavoriteByIdRequest) returns (DeleteResponse) {}
 
     // Pockets Management
     rpc CreatePocket(CreatePocketRequest) returns (Pocket) {}
-    rpc GetPocketsByUserID(GetPocketsByUserIDRequest) returns (GetPocketsByUserIDResponse) {}
-    rpc UpdatePocketByID(UpdatePocketByIDRequest) returns (Pocket) {}
-    rpc DeletePocketByID(DeletePocketByIDRequest) returns (DeleteResponse) {}
+    rpc GetPocketsByUserId(GetPocketsByUserIdRequest) returns (GetPocketsByUserIdResponse) {}
+    rpc UpdatePocketById(UpdatePocketByIdRequest) returns (Pocket) {}
+    rpc DeletePocketById(DeletePocketByIdRequest) returns (DeleteResponse) {}
 
     // 
 }
@@ -103,11 +103,11 @@ message CreateUserRequest {
     string birthdate = 6;
 }
 
-message GetUserByIDRequest {
+message GetUserByIdRequest {
     string user_id = 1;
 }
 
-message UpdateUserByIDRequest {
+message UpdateUserByIdRequest {
     string id = 1;
     string email = 2;
     string username = 3;
@@ -117,7 +117,7 @@ message UpdateUserByIDRequest {
     string birthdate = 7;
 }
 
-message DeleteUserByIDRequest {
+message DeleteUserByIdRequest {
     string id = 1;
 }
 
@@ -128,16 +128,16 @@ message CreateFavoriteRequest {
     string alias = 3;
 }
 
-message GetFavoritesByUserIDRequest {
+message GetFavoritesByUserIdRequest {
     string user_id = 1;
 }
 
-message UpdateFavoriteByIDRequest {
+message UpdateFavoriteByIdRequest {
     string id = 1;
     string alias = 2;
 }
 
-message DeleteFavoriteByIDRequest {
+message DeleteFavoriteByIdRequest {
     string id = 1;
 }
 
@@ -149,18 +149,18 @@ message CreatePocketRequest {
     int32 max_amount = 4;
 }
 
-message GetPocketsByUserIDRequest {
+message GetPocketsByUserIdRequest {
     string user_id = 1;
 }
 
-message UpdatePocketByIDRequest {
+message UpdatePocketByIdRequest {
     string id = 1;
     string name = 2;
     string category = 3;
     int32 max_amount = 4;
 }
 
-message DeletePocketByIDRequest {
+message DeletePocketByIdRequest {
     string id = 1;
 }
 
@@ -169,11 +169,11 @@ message DeletePocketByIDRequest {
 // Messages: Responses
 // -----------------------------------------------------------------------------
 
-message GetFavoritesByUserIDResponse {
+message GetFavoritesByUserIdResponse {
     repeated Favorite favorites = 1;
 }
 
-message GetPocketsByUserIDResponse {
+message GetPocketsByUserIdResponse {
     repeated Pocket pockets = 1;
 }
 
