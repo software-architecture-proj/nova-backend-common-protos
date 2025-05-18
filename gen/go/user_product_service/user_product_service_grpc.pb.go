@@ -19,27 +19,27 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	UserService_CreateUser_FullMethodName           = "/user_product.UserService/CreateUser"
-	UserService_GetUserById_FullMethodName          = "/user_product.UserService/GetUserById"
-	UserService_UpdateUserById_FullMethodName       = "/user_product.UserService/UpdateUserById"
-	UserService_DeleteUserById_FullMethodName       = "/user_product.UserService/DeleteUserById"
-	UserService_CreateFavorite_FullMethodName       = "/user_product.UserService/CreateFavorite"
-	UserService_GetFavoritesByUserId_FullMethodName = "/user_product.UserService/GetFavoritesByUserId"
-	UserService_UpdateFavoriteById_FullMethodName   = "/user_product.UserService/UpdateFavoriteById"
-	UserService_DeleteFavoriteById_FullMethodName   = "/user_product.UserService/DeleteFavoriteById"
-	UserService_CreatePocket_FullMethodName         = "/user_product.UserService/CreatePocket"
-	UserService_GetPocketsByUserId_FullMethodName   = "/user_product.UserService/GetPocketsByUserId"
-	UserService_UpdatePocketById_FullMethodName     = "/user_product.UserService/UpdatePocketById"
-	UserService_DeletePocketById_FullMethodName     = "/user_product.UserService/DeletePocketById"
+	UserProductService_CreateUser_FullMethodName           = "/user_product.UserProductService/CreateUser"
+	UserProductService_GetUserById_FullMethodName          = "/user_product.UserProductService/GetUserById"
+	UserProductService_UpdateUserById_FullMethodName       = "/user_product.UserProductService/UpdateUserById"
+	UserProductService_DeleteUserById_FullMethodName       = "/user_product.UserProductService/DeleteUserById"
+	UserProductService_CreateFavorite_FullMethodName       = "/user_product.UserProductService/CreateFavorite"
+	UserProductService_GetFavoritesByUserId_FullMethodName = "/user_product.UserProductService/GetFavoritesByUserId"
+	UserProductService_UpdateFavoriteById_FullMethodName   = "/user_product.UserProductService/UpdateFavoriteById"
+	UserProductService_DeleteFavoriteById_FullMethodName   = "/user_product.UserProductService/DeleteFavoriteById"
+	UserProductService_CreatePocket_FullMethodName         = "/user_product.UserProductService/CreatePocket"
+	UserProductService_GetPocketsByUserId_FullMethodName   = "/user_product.UserProductService/GetPocketsByUserId"
+	UserProductService_UpdatePocketById_FullMethodName     = "/user_product.UserProductService/UpdatePocketById"
+	UserProductService_DeletePocketById_FullMethodName     = "/user_product.UserProductService/DeletePocketById"
 )
 
-// UserServiceClient is the client API for UserService service.
+// UserProductServiceClient is the client API for UserProductService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // @Trigger: I think we can do all methods here, as doing separate services
 // for pockets, countrycode and verification seems unnecessary to me.
-type UserServiceClient interface {
+type UserProductServiceClient interface {
 	// User Management
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*User, error)
 	GetUserById(ctx context.Context, in *GetUserByIdRequest, opts ...grpc.CallOption) (*User, error)
@@ -57,141 +57,141 @@ type UserServiceClient interface {
 	DeletePocketById(ctx context.Context, in *DeletePocketByIdRequest, opts ...grpc.CallOption) (*DeleteResponse, error)
 }
 
-type userServiceClient struct {
+type userProductServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
-	return &userServiceClient{cc}
+func NewUserProductServiceClient(cc grpc.ClientConnInterface) UserProductServiceClient {
+	return &userProductServiceClient{cc}
 }
 
-func (c *userServiceClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*User, error) {
+func (c *userProductServiceClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*User, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(User)
-	err := c.cc.Invoke(ctx, UserService_CreateUser_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_CreateUser_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) GetUserById(ctx context.Context, in *GetUserByIdRequest, opts ...grpc.CallOption) (*User, error) {
+func (c *userProductServiceClient) GetUserById(ctx context.Context, in *GetUserByIdRequest, opts ...grpc.CallOption) (*User, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(User)
-	err := c.cc.Invoke(ctx, UserService_GetUserById_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_GetUserById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateUserById(ctx context.Context, in *UpdateUserByIdRequest, opts ...grpc.CallOption) (*User, error) {
+func (c *userProductServiceClient) UpdateUserById(ctx context.Context, in *UpdateUserByIdRequest, opts ...grpc.CallOption) (*User, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(User)
-	err := c.cc.Invoke(ctx, UserService_UpdateUserById_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_UpdateUserById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteUserById(ctx context.Context, in *DeleteUserByIdRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
+func (c *userProductServiceClient) DeleteUserById(ctx context.Context, in *DeleteUserByIdRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DeleteResponse)
-	err := c.cc.Invoke(ctx, UserService_DeleteUserById_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_DeleteUserById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) CreateFavorite(ctx context.Context, in *CreateFavoriteRequest, opts ...grpc.CallOption) (*Favorite, error) {
+func (c *userProductServiceClient) CreateFavorite(ctx context.Context, in *CreateFavoriteRequest, opts ...grpc.CallOption) (*Favorite, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Favorite)
-	err := c.cc.Invoke(ctx, UserService_CreateFavorite_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_CreateFavorite_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) GetFavoritesByUserId(ctx context.Context, in *GetFavoritesByUserIdRequest, opts ...grpc.CallOption) (*GetFavoritesByUserIdResponse, error) {
+func (c *userProductServiceClient) GetFavoritesByUserId(ctx context.Context, in *GetFavoritesByUserIdRequest, opts ...grpc.CallOption) (*GetFavoritesByUserIdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetFavoritesByUserIdResponse)
-	err := c.cc.Invoke(ctx, UserService_GetFavoritesByUserId_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_GetFavoritesByUserId_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateFavoriteById(ctx context.Context, in *UpdateFavoriteByIdRequest, opts ...grpc.CallOption) (*Favorite, error) {
+func (c *userProductServiceClient) UpdateFavoriteById(ctx context.Context, in *UpdateFavoriteByIdRequest, opts ...grpc.CallOption) (*Favorite, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Favorite)
-	err := c.cc.Invoke(ctx, UserService_UpdateFavoriteById_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_UpdateFavoriteById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeleteFavoriteById(ctx context.Context, in *DeleteFavoriteByIdRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
+func (c *userProductServiceClient) DeleteFavoriteById(ctx context.Context, in *DeleteFavoriteByIdRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DeleteResponse)
-	err := c.cc.Invoke(ctx, UserService_DeleteFavoriteById_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_DeleteFavoriteById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) CreatePocket(ctx context.Context, in *CreatePocketRequest, opts ...grpc.CallOption) (*Pocket, error) {
+func (c *userProductServiceClient) CreatePocket(ctx context.Context, in *CreatePocketRequest, opts ...grpc.CallOption) (*Pocket, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Pocket)
-	err := c.cc.Invoke(ctx, UserService_CreatePocket_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_CreatePocket_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) GetPocketsByUserId(ctx context.Context, in *GetPocketsByUserIdRequest, opts ...grpc.CallOption) (*GetPocketsByUserIdResponse, error) {
+func (c *userProductServiceClient) GetPocketsByUserId(ctx context.Context, in *GetPocketsByUserIdRequest, opts ...grpc.CallOption) (*GetPocketsByUserIdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetPocketsByUserIdResponse)
-	err := c.cc.Invoke(ctx, UserService_GetPocketsByUserId_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_GetPocketsByUserId_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdatePocketById(ctx context.Context, in *UpdatePocketByIdRequest, opts ...grpc.CallOption) (*Pocket, error) {
+func (c *userProductServiceClient) UpdatePocketById(ctx context.Context, in *UpdatePocketByIdRequest, opts ...grpc.CallOption) (*Pocket, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Pocket)
-	err := c.cc.Invoke(ctx, UserService_UpdatePocketById_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_UpdatePocketById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) DeletePocketById(ctx context.Context, in *DeletePocketByIdRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
+func (c *userProductServiceClient) DeletePocketById(ctx context.Context, in *DeletePocketByIdRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DeleteResponse)
-	err := c.cc.Invoke(ctx, UserService_DeletePocketById_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, UserProductService_DeletePocketById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UserServiceServer is the server API for UserService service.
-// All implementations must embed UnimplementedUserServiceServer
+// UserProductServiceServer is the server API for UserProductService service.
+// All implementations must embed UnimplementedUserProductServiceServer
 // for forward compatibility.
 //
 // @Trigger: I think we can do all methods here, as doing separate services
 // for pockets, countrycode and verification seems unnecessary to me.
-type UserServiceServer interface {
+type UserProductServiceServer interface {
 	// User Management
 	CreateUser(context.Context, *CreateUserRequest) (*User, error)
 	GetUserById(context.Context, *GetUserByIdRequest) (*User, error)
@@ -207,343 +207,343 @@ type UserServiceServer interface {
 	GetPocketsByUserId(context.Context, *GetPocketsByUserIdRequest) (*GetPocketsByUserIdResponse, error)
 	UpdatePocketById(context.Context, *UpdatePocketByIdRequest) (*Pocket, error)
 	DeletePocketById(context.Context, *DeletePocketByIdRequest) (*DeleteResponse, error)
-	mustEmbedUnimplementedUserServiceServer()
+	mustEmbedUnimplementedUserProductServiceServer()
 }
 
-// UnimplementedUserServiceServer must be embedded to have
+// UnimplementedUserProductServiceServer must be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedUserServiceServer struct{}
+type UnimplementedUserProductServiceServer struct{}
 
-func (UnimplementedUserServiceServer) CreateUser(context.Context, *CreateUserRequest) (*User, error) {
+func (UnimplementedUserProductServiceServer) CreateUser(context.Context, *CreateUserRequest) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
-func (UnimplementedUserServiceServer) GetUserById(context.Context, *GetUserByIdRequest) (*User, error) {
+func (UnimplementedUserProductServiceServer) GetUserById(context.Context, *GetUserByIdRequest) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserById not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateUserById(context.Context, *UpdateUserByIdRequest) (*User, error) {
+func (UnimplementedUserProductServiceServer) UpdateUserById(context.Context, *UpdateUserByIdRequest) (*User, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserById not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteUserById(context.Context, *DeleteUserByIdRequest) (*DeleteResponse, error) {
+func (UnimplementedUserProductServiceServer) DeleteUserById(context.Context, *DeleteUserByIdRequest) (*DeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserById not implemented")
 }
-func (UnimplementedUserServiceServer) CreateFavorite(context.Context, *CreateFavoriteRequest) (*Favorite, error) {
+func (UnimplementedUserProductServiceServer) CreateFavorite(context.Context, *CreateFavoriteRequest) (*Favorite, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFavorite not implemented")
 }
-func (UnimplementedUserServiceServer) GetFavoritesByUserId(context.Context, *GetFavoritesByUserIdRequest) (*GetFavoritesByUserIdResponse, error) {
+func (UnimplementedUserProductServiceServer) GetFavoritesByUserId(context.Context, *GetFavoritesByUserIdRequest) (*GetFavoritesByUserIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFavoritesByUserId not implemented")
 }
-func (UnimplementedUserServiceServer) UpdateFavoriteById(context.Context, *UpdateFavoriteByIdRequest) (*Favorite, error) {
+func (UnimplementedUserProductServiceServer) UpdateFavoriteById(context.Context, *UpdateFavoriteByIdRequest) (*Favorite, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFavoriteById not implemented")
 }
-func (UnimplementedUserServiceServer) DeleteFavoriteById(context.Context, *DeleteFavoriteByIdRequest) (*DeleteResponse, error) {
+func (UnimplementedUserProductServiceServer) DeleteFavoriteById(context.Context, *DeleteFavoriteByIdRequest) (*DeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteFavoriteById not implemented")
 }
-func (UnimplementedUserServiceServer) CreatePocket(context.Context, *CreatePocketRequest) (*Pocket, error) {
+func (UnimplementedUserProductServiceServer) CreatePocket(context.Context, *CreatePocketRequest) (*Pocket, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePocket not implemented")
 }
-func (UnimplementedUserServiceServer) GetPocketsByUserId(context.Context, *GetPocketsByUserIdRequest) (*GetPocketsByUserIdResponse, error) {
+func (UnimplementedUserProductServiceServer) GetPocketsByUserId(context.Context, *GetPocketsByUserIdRequest) (*GetPocketsByUserIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPocketsByUserId not implemented")
 }
-func (UnimplementedUserServiceServer) UpdatePocketById(context.Context, *UpdatePocketByIdRequest) (*Pocket, error) {
+func (UnimplementedUserProductServiceServer) UpdatePocketById(context.Context, *UpdatePocketByIdRequest) (*Pocket, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePocketById not implemented")
 }
-func (UnimplementedUserServiceServer) DeletePocketById(context.Context, *DeletePocketByIdRequest) (*DeleteResponse, error) {
+func (UnimplementedUserProductServiceServer) DeletePocketById(context.Context, *DeletePocketByIdRequest) (*DeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeletePocketById not implemented")
 }
-func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
-func (UnimplementedUserServiceServer) testEmbeddedByValue()                     {}
+func (UnimplementedUserProductServiceServer) mustEmbedUnimplementedUserProductServiceServer() {}
+func (UnimplementedUserProductServiceServer) testEmbeddedByValue()                            {}
 
-// UnsafeUserServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UserServiceServer will
+// UnsafeUserProductServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to UserProductServiceServer will
 // result in compilation errors.
-type UnsafeUserServiceServer interface {
-	mustEmbedUnimplementedUserServiceServer()
+type UnsafeUserProductServiceServer interface {
+	mustEmbedUnimplementedUserProductServiceServer()
 }
 
-func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
-	// If the following call pancis, it indicates UnimplementedUserServiceServer was
+func RegisterUserProductServiceServer(s grpc.ServiceRegistrar, srv UserProductServiceServer) {
+	// If the following call pancis, it indicates UnimplementedUserProductServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&UserService_ServiceDesc, srv)
+	s.RegisterService(&UserProductService_ServiceDesc, srv)
 }
 
-func _UserService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateUser(ctx, in)
+		return srv.(UserProductServiceServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_CreateUser_FullMethodName,
+		FullMethod: UserProductService_CreateUser_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateUser(ctx, req.(*CreateUserRequest))
+		return srv.(UserProductServiceServer).CreateUser(ctx, req.(*CreateUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetUserById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_GetUserById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUserByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetUserById(ctx, in)
+		return srv.(UserProductServiceServer).GetUserById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_GetUserById_FullMethodName,
+		FullMethod: UserProductService_GetUserById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetUserById(ctx, req.(*GetUserByIdRequest))
+		return srv.(UserProductServiceServer).GetUserById(ctx, req.(*GetUserByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateUserById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_UpdateUserById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateUserByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateUserById(ctx, in)
+		return srv.(UserProductServiceServer).UpdateUserById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_UpdateUserById_FullMethodName,
+		FullMethod: UserProductService_UpdateUserById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateUserById(ctx, req.(*UpdateUserByIdRequest))
+		return srv.(UserProductServiceServer).UpdateUserById(ctx, req.(*UpdateUserByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeleteUserById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_DeleteUserById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteUserByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeleteUserById(ctx, in)
+		return srv.(UserProductServiceServer).DeleteUserById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_DeleteUserById_FullMethodName,
+		FullMethod: UserProductService_DeleteUserById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteUserById(ctx, req.(*DeleteUserByIdRequest))
+		return srv.(UserProductServiceServer).DeleteUserById(ctx, req.(*DeleteUserByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreateFavorite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_CreateFavorite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateFavoriteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreateFavorite(ctx, in)
+		return srv.(UserProductServiceServer).CreateFavorite(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_CreateFavorite_FullMethodName,
+		FullMethod: UserProductService_CreateFavorite_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateFavorite(ctx, req.(*CreateFavoriteRequest))
+		return srv.(UserProductServiceServer).CreateFavorite(ctx, req.(*CreateFavoriteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetFavoritesByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_GetFavoritesByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetFavoritesByUserIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetFavoritesByUserId(ctx, in)
+		return srv.(UserProductServiceServer).GetFavoritesByUserId(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_GetFavoritesByUserId_FullMethodName,
+		FullMethod: UserProductService_GetFavoritesByUserId_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetFavoritesByUserId(ctx, req.(*GetFavoritesByUserIdRequest))
+		return srv.(UserProductServiceServer).GetFavoritesByUserId(ctx, req.(*GetFavoritesByUserIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateFavoriteById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_UpdateFavoriteById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateFavoriteByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateFavoriteById(ctx, in)
+		return srv.(UserProductServiceServer).UpdateFavoriteById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_UpdateFavoriteById_FullMethodName,
+		FullMethod: UserProductService_UpdateFavoriteById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateFavoriteById(ctx, req.(*UpdateFavoriteByIdRequest))
+		return srv.(UserProductServiceServer).UpdateFavoriteById(ctx, req.(*UpdateFavoriteByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeleteFavoriteById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_DeleteFavoriteById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteFavoriteByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeleteFavoriteById(ctx, in)
+		return srv.(UserProductServiceServer).DeleteFavoriteById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_DeleteFavoriteById_FullMethodName,
+		FullMethod: UserProductService_DeleteFavoriteById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeleteFavoriteById(ctx, req.(*DeleteFavoriteByIdRequest))
+		return srv.(UserProductServiceServer).DeleteFavoriteById(ctx, req.(*DeleteFavoriteByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_CreatePocket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_CreatePocket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreatePocketRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CreatePocket(ctx, in)
+		return srv.(UserProductServiceServer).CreatePocket(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_CreatePocket_FullMethodName,
+		FullMethod: UserProductService_CreatePocket_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreatePocket(ctx, req.(*CreatePocketRequest))
+		return srv.(UserProductServiceServer).CreatePocket(ctx, req.(*CreatePocketRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_GetPocketsByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_GetPocketsByUserId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetPocketsByUserIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetPocketsByUserId(ctx, in)
+		return srv.(UserProductServiceServer).GetPocketsByUserId(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_GetPocketsByUserId_FullMethodName,
+		FullMethod: UserProductService_GetPocketsByUserId_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetPocketsByUserId(ctx, req.(*GetPocketsByUserIdRequest))
+		return srv.(UserProductServiceServer).GetPocketsByUserId(ctx, req.(*GetPocketsByUserIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdatePocketById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_UpdatePocketById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdatePocketByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdatePocketById(ctx, in)
+		return srv.(UserProductServiceServer).UpdatePocketById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_UpdatePocketById_FullMethodName,
+		FullMethod: UserProductService_UpdatePocketById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdatePocketById(ctx, req.(*UpdatePocketByIdRequest))
+		return srv.(UserProductServiceServer).UpdatePocketById(ctx, req.(*UpdatePocketByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_DeletePocketById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserProductService_DeletePocketById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeletePocketByIdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).DeletePocketById(ctx, in)
+		return srv.(UserProductServiceServer).DeletePocketById(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_DeletePocketById_FullMethodName,
+		FullMethod: UserProductService_DeletePocketById_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).DeletePocketById(ctx, req.(*DeletePocketByIdRequest))
+		return srv.(UserProductServiceServer).DeletePocketById(ctx, req.(*DeletePocketByIdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
+// UserProductService_ServiceDesc is the grpc.ServiceDesc for UserProductService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UserService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "user_product.UserService",
-	HandlerType: (*UserServiceServer)(nil),
+var UserProductService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "user_product.UserProductService",
+	HandlerType: (*UserProductServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateUser",
-			Handler:    _UserService_CreateUser_Handler,
+			Handler:    _UserProductService_CreateUser_Handler,
 		},
 		{
 			MethodName: "GetUserById",
-			Handler:    _UserService_GetUserById_Handler,
+			Handler:    _UserProductService_GetUserById_Handler,
 		},
 		{
 			MethodName: "UpdateUserById",
-			Handler:    _UserService_UpdateUserById_Handler,
+			Handler:    _UserProductService_UpdateUserById_Handler,
 		},
 		{
 			MethodName: "DeleteUserById",
-			Handler:    _UserService_DeleteUserById_Handler,
+			Handler:    _UserProductService_DeleteUserById_Handler,
 		},
 		{
 			MethodName: "CreateFavorite",
-			Handler:    _UserService_CreateFavorite_Handler,
+			Handler:    _UserProductService_CreateFavorite_Handler,
 		},
 		{
 			MethodName: "GetFavoritesByUserId",
-			Handler:    _UserService_GetFavoritesByUserId_Handler,
+			Handler:    _UserProductService_GetFavoritesByUserId_Handler,
 		},
 		{
 			MethodName: "UpdateFavoriteById",
-			Handler:    _UserService_UpdateFavoriteById_Handler,
+			Handler:    _UserProductService_UpdateFavoriteById_Handler,
 		},
 		{
 			MethodName: "DeleteFavoriteById",
-			Handler:    _UserService_DeleteFavoriteById_Handler,
+			Handler:    _UserProductService_DeleteFavoriteById_Handler,
 		},
 		{
 			MethodName: "CreatePocket",
-			Handler:    _UserService_CreatePocket_Handler,
+			Handler:    _UserProductService_CreatePocket_Handler,
 		},
 		{
 			MethodName: "GetPocketsByUserId",
-			Handler:    _UserService_GetPocketsByUserId_Handler,
+			Handler:    _UserProductService_GetPocketsByUserId_Handler,
 		},
 		{
 			MethodName: "UpdatePocketById",
-			Handler:    _UserService_UpdatePocketById_Handler,
+			Handler:    _UserProductService_UpdatePocketById_Handler,
 		},
 		{
 			MethodName: "DeletePocketById",
-			Handler:    _UserService_DeletePocketById_Handler,
+			Handler:    _UserProductService_DeletePocketById_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

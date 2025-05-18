@@ -11,7 +11,7 @@ package user_product; // Protobuf package name
 
 // @Trigger: I think we can do all methods here, as doing separate services
 // for pockets, countrycode and verification seems unnecessary to me.
-service UserService {
+service UserProductService {
     // User Management
     rpc CreateUser(CreateUserRequest) returns (User) {}
     rpc GetUserById(GetUserByIdRequest) returns (User) {}

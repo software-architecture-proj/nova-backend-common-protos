@@ -1321,8 +1321,8 @@ const file_user_product_service_proto_rawDesc = "" +
 	"\x1aGetPocketsByUserIdResponse\x12.\n" +
 	"\apockets\x18\x01 \x03(\v2\x14.user_product.PocketR\apockets\"*\n" +
 	"\x0eDeleteResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess2\x9b\b\n" +
-	"\vUserService\x12C\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess2\xa2\b\n" +
+	"\x12UserProductService\x12C\n" +
 	"\n" +
 	"CreateUser\x12\x1f.user_product.CreateUserRequest\x1a\x12.user_product.User\"\x00\x12E\n" +
 	"\vGetUserById\x12 .user_product.GetUserByIdRequest\x1a\x12.user_product.User\"\x00\x12K\n" +
@@ -1375,30 +1375,30 @@ var file_user_product_service_proto_goTypes = []any{
 var file_user_product_service_proto_depIdxs = []int32{
 	1,  // 0: user_product.GetFavoritesByUserIdResponse.favorites:type_name -> user_product.Favorite
 	2,  // 1: user_product.GetPocketsByUserIdResponse.pockets:type_name -> user_product.Pocket
-	5,  // 2: user_product.UserService.CreateUser:input_type -> user_product.CreateUserRequest
-	6,  // 3: user_product.UserService.GetUserById:input_type -> user_product.GetUserByIdRequest
-	7,  // 4: user_product.UserService.UpdateUserById:input_type -> user_product.UpdateUserByIdRequest
-	8,  // 5: user_product.UserService.DeleteUserById:input_type -> user_product.DeleteUserByIdRequest
-	9,  // 6: user_product.UserService.CreateFavorite:input_type -> user_product.CreateFavoriteRequest
-	10, // 7: user_product.UserService.GetFavoritesByUserId:input_type -> user_product.GetFavoritesByUserIdRequest
-	11, // 8: user_product.UserService.UpdateFavoriteById:input_type -> user_product.UpdateFavoriteByIdRequest
-	12, // 9: user_product.UserService.DeleteFavoriteById:input_type -> user_product.DeleteFavoriteByIdRequest
-	13, // 10: user_product.UserService.CreatePocket:input_type -> user_product.CreatePocketRequest
-	14, // 11: user_product.UserService.GetPocketsByUserId:input_type -> user_product.GetPocketsByUserIdRequest
-	15, // 12: user_product.UserService.UpdatePocketById:input_type -> user_product.UpdatePocketByIdRequest
-	16, // 13: user_product.UserService.DeletePocketById:input_type -> user_product.DeletePocketByIdRequest
-	4,  // 14: user_product.UserService.CreateUser:output_type -> user_product.User
-	4,  // 15: user_product.UserService.GetUserById:output_type -> user_product.User
-	4,  // 16: user_product.UserService.UpdateUserById:output_type -> user_product.User
-	19, // 17: user_product.UserService.DeleteUserById:output_type -> user_product.DeleteResponse
-	1,  // 18: user_product.UserService.CreateFavorite:output_type -> user_product.Favorite
-	17, // 19: user_product.UserService.GetFavoritesByUserId:output_type -> user_product.GetFavoritesByUserIdResponse
-	1,  // 20: user_product.UserService.UpdateFavoriteById:output_type -> user_product.Favorite
-	19, // 21: user_product.UserService.DeleteFavoriteById:output_type -> user_product.DeleteResponse
-	2,  // 22: user_product.UserService.CreatePocket:output_type -> user_product.Pocket
-	18, // 23: user_product.UserService.GetPocketsByUserId:output_type -> user_product.GetPocketsByUserIdResponse
-	2,  // 24: user_product.UserService.UpdatePocketById:output_type -> user_product.Pocket
-	19, // 25: user_product.UserService.DeletePocketById:output_type -> user_product.DeleteResponse
+	5,  // 2: user_product.UserProductService.CreateUser:input_type -> user_product.CreateUserRequest
+	6,  // 3: user_product.UserProductService.GetUserById:input_type -> user_product.GetUserByIdRequest
+	7,  // 4: user_product.UserProductService.UpdateUserById:input_type -> user_product.UpdateUserByIdRequest
+	8,  // 5: user_product.UserProductService.DeleteUserById:input_type -> user_product.DeleteUserByIdRequest
+	9,  // 6: user_product.UserProductService.CreateFavorite:input_type -> user_product.CreateFavoriteRequest
+	10, // 7: user_product.UserProductService.GetFavoritesByUserId:input_type -> user_product.GetFavoritesByUserIdRequest
+	11, // 8: user_product.UserProductService.UpdateFavoriteById:input_type -> user_product.UpdateFavoriteByIdRequest
+	12, // 9: user_product.UserProductService.DeleteFavoriteById:input_type -> user_product.DeleteFavoriteByIdRequest
+	13, // 10: user_product.UserProductService.CreatePocket:input_type -> user_product.CreatePocketRequest
+	14, // 11: user_product.UserProductService.GetPocketsByUserId:input_type -> user_product.GetPocketsByUserIdRequest
+	15, // 12: user_product.UserProductService.UpdatePocketById:input_type -> user_product.UpdatePocketByIdRequest
+	16, // 13: user_product.UserProductService.DeletePocketById:input_type -> user_product.DeletePocketByIdRequest
+	4,  // 14: user_product.UserProductService.CreateUser:output_type -> user_product.User
+	4,  // 15: user_product.UserProductService.GetUserById:output_type -> user_product.User
+	4,  // 16: user_product.UserProductService.UpdateUserById:output_type -> user_product.User
+	19, // 17: user_product.UserProductService.DeleteUserById:output_type -> user_product.DeleteResponse
+	1,  // 18: user_product.UserProductService.CreateFavorite:output_type -> user_product.Favorite
+	17, // 19: user_product.UserProductService.GetFavoritesByUserId:output_type -> user_product.GetFavoritesByUserIdResponse
+	1,  // 20: user_product.UserProductService.UpdateFavoriteById:output_type -> user_product.Favorite
+	19, // 21: user_product.UserProductService.DeleteFavoriteById:output_type -> user_product.DeleteResponse
+	2,  // 22: user_product.UserProductService.CreatePocket:output_type -> user_product.Pocket
+	18, // 23: user_product.UserProductService.GetPocketsByUserId:output_type -> user_product.GetPocketsByUserIdResponse
+	2,  // 24: user_product.UserProductService.UpdatePocketById:output_type -> user_product.Pocket
+	19, // 25: user_product.UserProductService.DeletePocketById:output_type -> user_product.DeleteResponse
 	14, // [14:26] is the sub-list for method output_type
 	2,  // [2:14] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name
