@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: user_product.proto
+// source: user_product_service.proto
 
-package proto
+package user_product_service
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -33,7 +33,7 @@ type CountryCode struct {
 
 func (x *CountryCode) Reset() {
 	*x = CountryCode{}
-	mi := &file_user_product_proto_msgTypes[0]
+	mi := &file_user_product_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +45,7 @@ func (x *CountryCode) String() string {
 func (*CountryCode) ProtoMessage() {}
 
 func (x *CountryCode) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[0]
+	mi := &file_user_product_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *CountryCode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CountryCode.ProtoReflect.Descriptor instead.
 func (*CountryCode) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{0}
+	return file_user_product_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CountryCode) GetId() string {
@@ -95,7 +95,7 @@ type Favorite struct {
 
 func (x *Favorite) Reset() {
 	*x = Favorite{}
-	mi := &file_user_product_proto_msgTypes[1]
+	mi := &file_user_product_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -107,7 +107,7 @@ func (x *Favorite) String() string {
 func (*Favorite) ProtoMessage() {}
 
 func (x *Favorite) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[1]
+	mi := &file_user_product_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -120,7 +120,7 @@ func (x *Favorite) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Favorite.ProtoReflect.Descriptor instead.
 func (*Favorite) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{1}
+	return file_user_product_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Favorite) GetId() string {
@@ -165,7 +165,7 @@ type Pocket struct {
 
 func (x *Pocket) Reset() {
 	*x = Pocket{}
-	mi := &file_user_product_proto_msgTypes[2]
+	mi := &file_user_product_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -177,7 +177,7 @@ func (x *Pocket) String() string {
 func (*Pocket) ProtoMessage() {}
 
 func (x *Pocket) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[2]
+	mi := &file_user_product_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -190,7 +190,7 @@ func (x *Pocket) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Pocket.ProtoReflect.Descriptor instead.
 func (*Pocket) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{2}
+	return file_user_product_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Pocket) GetId() string {
@@ -241,7 +241,7 @@ type Verification struct {
 
 func (x *Verification) Reset() {
 	*x = Verification{}
-	mi := &file_user_product_proto_msgTypes[3]
+	mi := &file_user_product_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -253,7 +253,7 @@ func (x *Verification) String() string {
 func (*Verification) ProtoMessage() {}
 
 func (x *Verification) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[3]
+	mi := &file_user_product_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -266,7 +266,7 @@ func (x *Verification) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Verification.ProtoReflect.Descriptor instead.
 func (*Verification) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{3}
+	return file_user_product_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Verification) GetId() string {
@@ -317,7 +317,7 @@ type User struct {
 
 func (x *User) Reset() {
 	*x = User{}
-	mi := &file_user_product_proto_msgTypes[4]
+	mi := &file_user_product_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -329,7 +329,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[4]
+	mi := &file_user_product_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -342,7 +342,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{4}
+	return file_user_product_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *User) GetId() string {
@@ -423,7 +423,7 @@ type CreateUserRequest struct {
 
 func (x *CreateUserRequest) Reset() {
 	*x = CreateUserRequest{}
-	mi := &file_user_product_proto_msgTypes[5]
+	mi := &file_user_product_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -435,7 +435,7 @@ func (x *CreateUserRequest) String() string {
 func (*CreateUserRequest) ProtoMessage() {}
 
 func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[5]
+	mi := &file_user_product_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -448,7 +448,7 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{5}
+	return file_user_product_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CreateUserRequest) GetEmail() string {
@@ -502,7 +502,7 @@ type GetUserByIdRequest struct {
 
 func (x *GetUserByIdRequest) Reset() {
 	*x = GetUserByIdRequest{}
-	mi := &file_user_product_proto_msgTypes[6]
+	mi := &file_user_product_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -514,7 +514,7 @@ func (x *GetUserByIdRequest) String() string {
 func (*GetUserByIdRequest) ProtoMessage() {}
 
 func (x *GetUserByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[6]
+	mi := &file_user_product_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -527,7 +527,7 @@ func (x *GetUserByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserByIdRequest.ProtoReflect.Descriptor instead.
 func (*GetUserByIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{6}
+	return file_user_product_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetUserByIdRequest) GetUserId() string {
@@ -552,7 +552,7 @@ type UpdateUserByIdRequest struct {
 
 func (x *UpdateUserByIdRequest) Reset() {
 	*x = UpdateUserByIdRequest{}
-	mi := &file_user_product_proto_msgTypes[7]
+	mi := &file_user_product_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -564,7 +564,7 @@ func (x *UpdateUserByIdRequest) String() string {
 func (*UpdateUserByIdRequest) ProtoMessage() {}
 
 func (x *UpdateUserByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[7]
+	mi := &file_user_product_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -577,7 +577,7 @@ func (x *UpdateUserByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserByIdRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserByIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{7}
+	return file_user_product_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UpdateUserByIdRequest) GetId() string {
@@ -638,7 +638,7 @@ type DeleteUserByIdRequest struct {
 
 func (x *DeleteUserByIdRequest) Reset() {
 	*x = DeleteUserByIdRequest{}
-	mi := &file_user_product_proto_msgTypes[8]
+	mi := &file_user_product_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -650,7 +650,7 @@ func (x *DeleteUserByIdRequest) String() string {
 func (*DeleteUserByIdRequest) ProtoMessage() {}
 
 func (x *DeleteUserByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[8]
+	mi := &file_user_product_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -663,7 +663,7 @@ func (x *DeleteUserByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteUserByIdRequest.ProtoReflect.Descriptor instead.
 func (*DeleteUserByIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{8}
+	return file_user_product_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteUserByIdRequest) GetId() string {
@@ -685,7 +685,7 @@ type CreateFavoriteRequest struct {
 
 func (x *CreateFavoriteRequest) Reset() {
 	*x = CreateFavoriteRequest{}
-	mi := &file_user_product_proto_msgTypes[9]
+	mi := &file_user_product_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -697,7 +697,7 @@ func (x *CreateFavoriteRequest) String() string {
 func (*CreateFavoriteRequest) ProtoMessage() {}
 
 func (x *CreateFavoriteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[9]
+	mi := &file_user_product_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -710,7 +710,7 @@ func (x *CreateFavoriteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateFavoriteRequest.ProtoReflect.Descriptor instead.
 func (*CreateFavoriteRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{9}
+	return file_user_product_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *CreateFavoriteRequest) GetUserId() string {
@@ -743,7 +743,7 @@ type GetFavoritesByUserIdRequest struct {
 
 func (x *GetFavoritesByUserIdRequest) Reset() {
 	*x = GetFavoritesByUserIdRequest{}
-	mi := &file_user_product_proto_msgTypes[10]
+	mi := &file_user_product_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -755,7 +755,7 @@ func (x *GetFavoritesByUserIdRequest) String() string {
 func (*GetFavoritesByUserIdRequest) ProtoMessage() {}
 
 func (x *GetFavoritesByUserIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[10]
+	mi := &file_user_product_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -768,7 +768,7 @@ func (x *GetFavoritesByUserIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFavoritesByUserIdRequest.ProtoReflect.Descriptor instead.
 func (*GetFavoritesByUserIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{10}
+	return file_user_product_service_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetFavoritesByUserIdRequest) GetUserId() string {
@@ -788,7 +788,7 @@ type UpdateFavoriteByIdRequest struct {
 
 func (x *UpdateFavoriteByIdRequest) Reset() {
 	*x = UpdateFavoriteByIdRequest{}
-	mi := &file_user_product_proto_msgTypes[11]
+	mi := &file_user_product_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -800,7 +800,7 @@ func (x *UpdateFavoriteByIdRequest) String() string {
 func (*UpdateFavoriteByIdRequest) ProtoMessage() {}
 
 func (x *UpdateFavoriteByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[11]
+	mi := &file_user_product_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -813,7 +813,7 @@ func (x *UpdateFavoriteByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateFavoriteByIdRequest.ProtoReflect.Descriptor instead.
 func (*UpdateFavoriteByIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{11}
+	return file_user_product_service_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UpdateFavoriteByIdRequest) GetId() string {
@@ -839,7 +839,7 @@ type DeleteFavoriteByIdRequest struct {
 
 func (x *DeleteFavoriteByIdRequest) Reset() {
 	*x = DeleteFavoriteByIdRequest{}
-	mi := &file_user_product_proto_msgTypes[12]
+	mi := &file_user_product_service_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -851,7 +851,7 @@ func (x *DeleteFavoriteByIdRequest) String() string {
 func (*DeleteFavoriteByIdRequest) ProtoMessage() {}
 
 func (x *DeleteFavoriteByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[12]
+	mi := &file_user_product_service_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -864,7 +864,7 @@ func (x *DeleteFavoriteByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteFavoriteByIdRequest.ProtoReflect.Descriptor instead.
 func (*DeleteFavoriteByIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{12}
+	return file_user_product_service_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeleteFavoriteByIdRequest) GetId() string {
@@ -887,7 +887,7 @@ type CreatePocketRequest struct {
 
 func (x *CreatePocketRequest) Reset() {
 	*x = CreatePocketRequest{}
-	mi := &file_user_product_proto_msgTypes[13]
+	mi := &file_user_product_service_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -899,7 +899,7 @@ func (x *CreatePocketRequest) String() string {
 func (*CreatePocketRequest) ProtoMessage() {}
 
 func (x *CreatePocketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[13]
+	mi := &file_user_product_service_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -912,7 +912,7 @@ func (x *CreatePocketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePocketRequest.ProtoReflect.Descriptor instead.
 func (*CreatePocketRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{13}
+	return file_user_product_service_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *CreatePocketRequest) GetUserId() string {
@@ -952,7 +952,7 @@ type GetPocketsByUserIdRequest struct {
 
 func (x *GetPocketsByUserIdRequest) Reset() {
 	*x = GetPocketsByUserIdRequest{}
-	mi := &file_user_product_proto_msgTypes[14]
+	mi := &file_user_product_service_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -964,7 +964,7 @@ func (x *GetPocketsByUserIdRequest) String() string {
 func (*GetPocketsByUserIdRequest) ProtoMessage() {}
 
 func (x *GetPocketsByUserIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[14]
+	mi := &file_user_product_service_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -977,7 +977,7 @@ func (x *GetPocketsByUserIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPocketsByUserIdRequest.ProtoReflect.Descriptor instead.
 func (*GetPocketsByUserIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{14}
+	return file_user_product_service_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetPocketsByUserIdRequest) GetUserId() string {
@@ -999,7 +999,7 @@ type UpdatePocketByIdRequest struct {
 
 func (x *UpdatePocketByIdRequest) Reset() {
 	*x = UpdatePocketByIdRequest{}
-	mi := &file_user_product_proto_msgTypes[15]
+	mi := &file_user_product_service_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1011,7 +1011,7 @@ func (x *UpdatePocketByIdRequest) String() string {
 func (*UpdatePocketByIdRequest) ProtoMessage() {}
 
 func (x *UpdatePocketByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[15]
+	mi := &file_user_product_service_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1024,7 +1024,7 @@ func (x *UpdatePocketByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePocketByIdRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePocketByIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{15}
+	return file_user_product_service_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *UpdatePocketByIdRequest) GetId() string {
@@ -1064,7 +1064,7 @@ type DeletePocketByIdRequest struct {
 
 func (x *DeletePocketByIdRequest) Reset() {
 	*x = DeletePocketByIdRequest{}
-	mi := &file_user_product_proto_msgTypes[16]
+	mi := &file_user_product_service_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1076,7 +1076,7 @@ func (x *DeletePocketByIdRequest) String() string {
 func (*DeletePocketByIdRequest) ProtoMessage() {}
 
 func (x *DeletePocketByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[16]
+	mi := &file_user_product_service_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1089,7 +1089,7 @@ func (x *DeletePocketByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePocketByIdRequest.ProtoReflect.Descriptor instead.
 func (*DeletePocketByIdRequest) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{16}
+	return file_user_product_service_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DeletePocketByIdRequest) GetId() string {
@@ -1108,7 +1108,7 @@ type GetFavoritesByUserIdResponse struct {
 
 func (x *GetFavoritesByUserIdResponse) Reset() {
 	*x = GetFavoritesByUserIdResponse{}
-	mi := &file_user_product_proto_msgTypes[17]
+	mi := &file_user_product_service_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1120,7 +1120,7 @@ func (x *GetFavoritesByUserIdResponse) String() string {
 func (*GetFavoritesByUserIdResponse) ProtoMessage() {}
 
 func (x *GetFavoritesByUserIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[17]
+	mi := &file_user_product_service_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1133,7 +1133,7 @@ func (x *GetFavoritesByUserIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFavoritesByUserIdResponse.ProtoReflect.Descriptor instead.
 func (*GetFavoritesByUserIdResponse) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{17}
+	return file_user_product_service_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *GetFavoritesByUserIdResponse) GetFavorites() []*Favorite {
@@ -1152,7 +1152,7 @@ type GetPocketsByUserIdResponse struct {
 
 func (x *GetPocketsByUserIdResponse) Reset() {
 	*x = GetPocketsByUserIdResponse{}
-	mi := &file_user_product_proto_msgTypes[18]
+	mi := &file_user_product_service_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1164,7 +1164,7 @@ func (x *GetPocketsByUserIdResponse) String() string {
 func (*GetPocketsByUserIdResponse) ProtoMessage() {}
 
 func (x *GetPocketsByUserIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[18]
+	mi := &file_user_product_service_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1177,7 +1177,7 @@ func (x *GetPocketsByUserIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPocketsByUserIdResponse.ProtoReflect.Descriptor instead.
 func (*GetPocketsByUserIdResponse) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{18}
+	return file_user_product_service_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetPocketsByUserIdResponse) GetPockets() []*Pocket {
@@ -1196,7 +1196,7 @@ type DeleteResponse struct {
 
 func (x *DeleteResponse) Reset() {
 	*x = DeleteResponse{}
-	mi := &file_user_product_proto_msgTypes[19]
+	mi := &file_user_product_service_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1208,7 +1208,7 @@ func (x *DeleteResponse) String() string {
 func (*DeleteResponse) ProtoMessage() {}
 
 func (x *DeleteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_product_proto_msgTypes[19]
+	mi := &file_user_product_service_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1221,7 +1221,7 @@ func (x *DeleteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteResponse.ProtoReflect.Descriptor instead.
 func (*DeleteResponse) Descriptor() ([]byte, []int) {
-	return file_user_product_proto_rawDescGZIP(), []int{19}
+	return file_user_product_service_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *DeleteResponse) GetSuccess() bool {
@@ -1231,11 +1231,11 @@ func (x *DeleteResponse) GetSuccess() bool {
 	return false
 }
 
-var File_user_product_proto protoreflect.FileDescriptor
+var File_user_product_service_proto protoreflect.FileDescriptor
 
-const file_user_product_proto_rawDesc = "" +
+const file_user_product_service_proto_rawDesc = "" +
 	"\n" +
-	"\x12user_product.proto\x12\fuser_product\"E\n" +
+	"\x1auser_product_service.proto\x12\fuser_product\"E\n" +
 	"\vCountryCode\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
@@ -1335,22 +1335,22 @@ const file_user_product_proto_rawDesc = "" +
 	"\fCreatePocket\x12!.user_product.CreatePocketRequest\x1a\x14.user_product.Pocket\"\x00\x12i\n" +
 	"\x12GetPocketsByUserId\x12'.user_product.GetPocketsByUserIdRequest\x1a(.user_product.GetPocketsByUserIdResponse\"\x00\x12Q\n" +
 	"\x10UpdatePocketById\x12%.user_product.UpdatePocketByIdRequest\x1a\x14.user_product.Pocket\"\x00\x12Y\n" +
-	"\x10DeletePocketById\x12%.user_product.DeletePocketByIdRequest\x1a\x1c.user_product.DeleteResponse\"\x00BOZMmodule github.com/software-architecture-proj/nova-backend-common-protos/protob\x06proto3"
+	"\x10DeletePocketById\x12%.user_product.DeletePocketByIdRequest\x1a\x1c.user_product.DeleteResponse\"\x00B^Z\\github.com/software-architecture-proj/nova-backend-common-protos/gen/go/user_product_serviceb\x06proto3"
 
 var (
-	file_user_product_proto_rawDescOnce sync.Once
-	file_user_product_proto_rawDescData []byte
+	file_user_product_service_proto_rawDescOnce sync.Once
+	file_user_product_service_proto_rawDescData []byte
 )
 
-func file_user_product_proto_rawDescGZIP() []byte {
-	file_user_product_proto_rawDescOnce.Do(func() {
-		file_user_product_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_user_product_proto_rawDesc), len(file_user_product_proto_rawDesc)))
+func file_user_product_service_proto_rawDescGZIP() []byte {
+	file_user_product_service_proto_rawDescOnce.Do(func() {
+		file_user_product_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_user_product_service_proto_rawDesc), len(file_user_product_service_proto_rawDesc)))
 	})
-	return file_user_product_proto_rawDescData
+	return file_user_product_service_proto_rawDescData
 }
 
-var file_user_product_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
-var file_user_product_proto_goTypes = []any{
+var file_user_product_service_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
+var file_user_product_service_proto_goTypes = []any{
 	(*CountryCode)(nil),                  // 0: user_product.CountryCode
 	(*Favorite)(nil),                     // 1: user_product.Favorite
 	(*Pocket)(nil),                       // 2: user_product.Pocket
@@ -1372,7 +1372,7 @@ var file_user_product_proto_goTypes = []any{
 	(*GetPocketsByUserIdResponse)(nil),   // 18: user_product.GetPocketsByUserIdResponse
 	(*DeleteResponse)(nil),               // 19: user_product.DeleteResponse
 }
-var file_user_product_proto_depIdxs = []int32{
+var file_user_product_service_proto_depIdxs = []int32{
 	1,  // 0: user_product.GetFavoritesByUserIdResponse.favorites:type_name -> user_product.Favorite
 	2,  // 1: user_product.GetPocketsByUserIdResponse.pockets:type_name -> user_product.Pocket
 	5,  // 2: user_product.UserService.CreateUser:input_type -> user_product.CreateUserRequest
@@ -1406,26 +1406,26 @@ var file_user_product_proto_depIdxs = []int32{
 	0,  // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_user_product_proto_init() }
-func file_user_product_proto_init() {
-	if File_user_product_proto != nil {
+func init() { file_user_product_service_proto_init() }
+func file_user_product_service_proto_init() {
+	if File_user_product_service_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_product_proto_rawDesc), len(file_user_product_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_product_service_proto_rawDesc), len(file_user_product_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   20,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_user_product_proto_goTypes,
-		DependencyIndexes: file_user_product_proto_depIdxs,
-		MessageInfos:      file_user_product_proto_msgTypes,
+		GoTypes:           file_user_product_service_proto_goTypes,
+		DependencyIndexes: file_user_product_service_proto_depIdxs,
+		MessageInfos:      file_user_product_service_proto_msgTypes,
 	}.Build()
-	File_user_product_proto = out.File
-	file_user_product_proto_goTypes = nil
-	file_user_product_proto_depIdxs = nil
+	File_user_product_service_proto = out.File
+	file_user_product_service_proto_goTypes = nil
+	file_user_product_service_proto_depIdxs = nil
 }
