@@ -1924,7 +1924,7 @@ func (x *CreatePocketResponse) GetPocketId() string {
 	return ""
 }
 
-type GetPocketsByUserIdReesponse struct {
+type GetPocketsByUserIdResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
@@ -1933,20 +1933,20 @@ type GetPocketsByUserIdReesponse struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetPocketsByUserIdReesponse) Reset() {
-	*x = GetPocketsByUserIdReesponse{}
+func (x *GetPocketsByUserIdResponse) Reset() {
+	*x = GetPocketsByUserIdResponse{}
 	mi := &file_proto_user_product_service_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetPocketsByUserIdReesponse) String() string {
+func (x *GetPocketsByUserIdResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetPocketsByUserIdReesponse) ProtoMessage() {}
+func (*GetPocketsByUserIdResponse) ProtoMessage() {}
 
-func (x *GetPocketsByUserIdReesponse) ProtoReflect() protoreflect.Message {
+func (x *GetPocketsByUserIdResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_user_product_service_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1958,26 +1958,26 @@ func (x *GetPocketsByUserIdReesponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetPocketsByUserIdReesponse.ProtoReflect.Descriptor instead.
-func (*GetPocketsByUserIdReesponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPocketsByUserIdResponse.ProtoReflect.Descriptor instead.
+func (*GetPocketsByUserIdResponse) Descriptor() ([]byte, []int) {
 	return file_proto_user_product_service_proto_rawDescGZIP(), []int{30}
 }
 
-func (x *GetPocketsByUserIdReesponse) GetSuccess() bool {
+func (x *GetPocketsByUserIdResponse) GetSuccess() bool {
 	if x != nil {
 		return x.Success
 	}
 	return false
 }
 
-func (x *GetPocketsByUserIdReesponse) GetMessage() string {
+func (x *GetPocketsByUserIdResponse) GetMessage() string {
 	if x != nil {
 		return x.Message
 	}
 	return ""
 }
 
-func (x *GetPocketsByUserIdReesponse) GetPockets() []*Pocket {
+func (x *GetPocketsByUserIdResponse) GetPockets() []*Pocket {
 	if x != nil {
 		return x.Pockets
 	}
@@ -2385,8 +2385,8 @@ const file_proto_user_product_service_proto_rawDesc = "" +
 	"\x14CreatePocketResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12\x1b\n" +
-	"\tpocket_id\x18\x03 \x01(\tR\bpocketId\"\x81\x01\n" +
-	"\x1bGetPocketsByUserIdReesponse\x12\x18\n" +
+	"\tpocket_id\x18\x03 \x01(\tR\bpocketId\"\x80\x01\n" +
+	"\x1aGetPocketsByUserIdResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12.\n" +
 	"\apockets\x18\x03 \x03(\v2\x14.user_product.PocketR\apockets\"\x9d\x01\n" +
@@ -2408,7 +2408,7 @@ const file_proto_user_product_service_proto_rawDesc = "" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12\x12\n" +
 	"\x04type\x18\x03 \x01(\tR\x04type\x12\x16\n" +
-	"\x06status\x18\x04 \x01(\tR\x06status2\x93\f\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status2\x92\f\n" +
 	"\x12UserProductService\x12Q\n" +
 	"\n" +
 	"CreateUser\x12\x1f.user_product.CreateUserRequest\x1a .user_product.CreateUserResponse\"\x00\x12T\n" +
@@ -2420,8 +2420,8 @@ const file_proto_user_product_service_proto_rawDesc = "" +
 	"\x14GetFavoritesByUserId\x12).user_product.GetFavoritesByUserIdRequest\x1a*.user_product.GetFavoritesByUserIdResponse\"\x00\x12i\n" +
 	"\x12UpdateFavoriteById\x12'.user_product.UpdateFavoriteByIdRequest\x1a(.user_product.UpdateFavoriteByIdResponse\"\x00\x12i\n" +
 	"\x12DeleteFavoriteById\x12'.user_product.DeleteFavoriteByIdRequest\x1a(.user_product.DeleteFavoriteByIdResponse\"\x00\x12W\n" +
-	"\fCreatePocket\x12!.user_product.CreatePocketRequest\x1a\".user_product.CreatePocketResponse\"\x00\x12j\n" +
-	"\x12GetPocketsByUserId\x12'.user_product.GetPocketsByUserIdRequest\x1a).user_product.GetPocketsByUserIdReesponse\"\x00\x12c\n" +
+	"\fCreatePocket\x12!.user_product.CreatePocketRequest\x1a\".user_product.CreatePocketResponse\"\x00\x12i\n" +
+	"\x12GetPocketsByUserId\x12'.user_product.GetPocketsByUserIdRequest\x1a(.user_product.GetPocketsByUserIdResponse\"\x00\x12c\n" +
 	"\x10UpdatePocketById\x12%.user_product.UpdatePocketByIdRequest\x1a&.user_product.UpdatePocketByIdResponse\"\x00\x12c\n" +
 	"\x10DeletePocketById\x12%.user_product.DeletePocketByIdRequest\x1a&.user_product.DeletePocketByIdResponse\"\x00\x12{\n" +
 	"\x18GetVerificationsByUserId\x12-.user_product.GetVerificationsByUserIdRequest\x1a..user_product.GetVerificationsByUserIdResponse\"\x00\x12\x81\x01\n" +
@@ -2471,7 +2471,7 @@ var file_proto_user_product_service_proto_goTypes = []any{
 	(*UpdateFavoriteByIdResponse)(nil),         // 27: user_product.UpdateFavoriteByIdResponse
 	(*DeleteFavoriteByIdResponse)(nil),         // 28: user_product.DeleteFavoriteByIdResponse
 	(*CreatePocketResponse)(nil),               // 29: user_product.CreatePocketResponse
-	(*GetPocketsByUserIdReesponse)(nil),        // 30: user_product.GetPocketsByUserIdReesponse
+	(*GetPocketsByUserIdResponse)(nil),         // 30: user_product.GetPocketsByUserIdResponse
 	(*UpdatePocketByIdResponse)(nil),           // 31: user_product.UpdatePocketByIdResponse
 	(*DeletePocketByIdResponse)(nil),           // 32: user_product.DeletePocketByIdResponse
 	(*GetVerificationsByUserIdResponse)(nil),   // 33: user_product.GetVerificationsByUserIdResponse
@@ -2480,7 +2480,7 @@ var file_proto_user_product_service_proto_goTypes = []any{
 var file_proto_user_product_service_proto_depIdxs = []int32{
 	0,  // 0: user_product.GetCountryCodesResponse.codes:type_name -> user_product.CountryCode
 	1,  // 1: user_product.GetFavoritesByUserIdResponse.favorites:type_name -> user_product.Favorite
-	2,  // 2: user_product.GetPocketsByUserIdReesponse.pockets:type_name -> user_product.Pocket
+	2,  // 2: user_product.GetPocketsByUserIdResponse.pockets:type_name -> user_product.Pocket
 	3,  // 3: user_product.GetVerificationsByUserIdResponse.verifications:type_name -> user_product.Verification
 	6,  // 4: user_product.UserProductService.CreateUser:input_type -> user_product.CreateUserRequest
 	7,  // 5: user_product.UserProductService.GetUserById:input_type -> user_product.GetUserByIdRequest
@@ -2507,7 +2507,7 @@ var file_proto_user_product_service_proto_depIdxs = []int32{
 	27, // 26: user_product.UserProductService.UpdateFavoriteById:output_type -> user_product.UpdateFavoriteByIdResponse
 	28, // 27: user_product.UserProductService.DeleteFavoriteById:output_type -> user_product.DeleteFavoriteByIdResponse
 	29, // 28: user_product.UserProductService.CreatePocket:output_type -> user_product.CreatePocketResponse
-	30, // 29: user_product.UserProductService.GetPocketsByUserId:output_type -> user_product.GetPocketsByUserIdReesponse
+	30, // 29: user_product.UserProductService.GetPocketsByUserId:output_type -> user_product.GetPocketsByUserIdResponse
 	31, // 30: user_product.UserProductService.UpdatePocketById:output_type -> user_product.UpdatePocketByIdResponse
 	32, // 31: user_product.UserProductService.DeletePocketById:output_type -> user_product.DeletePocketByIdResponse
 	33, // 32: user_product.UserProductService.GetVerificationsByUserId:output_type -> user_product.GetVerificationsByUserIdResponse

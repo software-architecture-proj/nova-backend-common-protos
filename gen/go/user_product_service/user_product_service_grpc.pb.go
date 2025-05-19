@@ -57,7 +57,7 @@ type UserProductServiceClient interface {
 	DeleteFavoriteById(ctx context.Context, in *DeleteFavoriteByIdRequest, opts ...grpc.CallOption) (*DeleteFavoriteByIdResponse, error)
 	// Pockets
 	CreatePocket(ctx context.Context, in *CreatePocketRequest, opts ...grpc.CallOption) (*CreatePocketResponse, error)
-	GetPocketsByUserId(ctx context.Context, in *GetPocketsByUserIdRequest, opts ...grpc.CallOption) (*GetPocketsByUserIdReesponse, error)
+	GetPocketsByUserId(ctx context.Context, in *GetPocketsByUserIdRequest, opts ...grpc.CallOption) (*GetPocketsByUserIdResponse, error)
 	UpdatePocketById(ctx context.Context, in *UpdatePocketByIdRequest, opts ...grpc.CallOption) (*UpdatePocketByIdResponse, error)
 	DeletePocketById(ctx context.Context, in *DeletePocketByIdRequest, opts ...grpc.CallOption) (*DeletePocketByIdResponse, error)
 	// Verifications
@@ -173,9 +173,9 @@ func (c *userProductServiceClient) CreatePocket(ctx context.Context, in *CreateP
 	return out, nil
 }
 
-func (c *userProductServiceClient) GetPocketsByUserId(ctx context.Context, in *GetPocketsByUserIdRequest, opts ...grpc.CallOption) (*GetPocketsByUserIdReesponse, error) {
+func (c *userProductServiceClient) GetPocketsByUserId(ctx context.Context, in *GetPocketsByUserIdRequest, opts ...grpc.CallOption) (*GetPocketsByUserIdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPocketsByUserIdReesponse)
+	out := new(GetPocketsByUserIdResponse)
 	err := c.cc.Invoke(ctx, UserProductService_GetPocketsByUserId_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -244,7 +244,7 @@ type UserProductServiceServer interface {
 	DeleteFavoriteById(context.Context, *DeleteFavoriteByIdRequest) (*DeleteFavoriteByIdResponse, error)
 	// Pockets
 	CreatePocket(context.Context, *CreatePocketRequest) (*CreatePocketResponse, error)
-	GetPocketsByUserId(context.Context, *GetPocketsByUserIdRequest) (*GetPocketsByUserIdReesponse, error)
+	GetPocketsByUserId(context.Context, *GetPocketsByUserIdRequest) (*GetPocketsByUserIdResponse, error)
 	UpdatePocketById(context.Context, *UpdatePocketByIdRequest) (*UpdatePocketByIdResponse, error)
 	DeletePocketById(context.Context, *DeletePocketByIdRequest) (*DeletePocketByIdResponse, error)
 	// Verifications
@@ -290,7 +290,7 @@ func (UnimplementedUserProductServiceServer) DeleteFavoriteById(context.Context,
 func (UnimplementedUserProductServiceServer) CreatePocket(context.Context, *CreatePocketRequest) (*CreatePocketResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePocket not implemented")
 }
-func (UnimplementedUserProductServiceServer) GetPocketsByUserId(context.Context, *GetPocketsByUserIdRequest) (*GetPocketsByUserIdReesponse, error) {
+func (UnimplementedUserProductServiceServer) GetPocketsByUserId(context.Context, *GetPocketsByUserIdRequest) (*GetPocketsByUserIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPocketsByUserId not implemented")
 }
 func (UnimplementedUserProductServiceServer) UpdatePocketById(context.Context, *UpdatePocketByIdRequest) (*UpdatePocketByIdResponse, error) {

@@ -29,7 +29,7 @@ service UserProductService {
 
     // Pockets
     rpc CreatePocket(CreatePocketRequest) returns (CreatePocketResponse) {}
-    rpc GetPocketsByUserId(GetPocketsByUserIdRequest) returns (GetPocketsByUserIdReesponse) {}
+    rpc GetPocketsByUserId(GetPocketsByUserIdRequest) returns (GetPocketsByUserIdResponse) {}
     rpc UpdatePocketById(UpdatePocketByIdRequest) returns (UpdatePocketByIdResponse) {}
     rpc DeletePocketById(DeletePocketByIdRequest) returns (DeletePocketByIdResponse) {}
 
@@ -262,7 +262,7 @@ message CreatePocketResponse {
     string pocket_id = 3;
 }
 
-message GetPocketsByUserIdReesponse {
+message GetPocketsByUserIdResponse {
     bool success = 1;
     string message = 2;
     repeated Pocket pockets = 3;
