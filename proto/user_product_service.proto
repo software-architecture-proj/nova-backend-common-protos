@@ -13,27 +13,30 @@ package user_product; // Protobuf package name
 // for pockets, countrycode and verification seems unnecessary to me.
 service UserProductService {
     // User Management
-    rpc CreateUser(CreateUserRequest) returns (User) {}
-    rpc GetUserById(GetUserByIdRequest) returns (User) {}
-    rpc UpdateUserById(UpdateUserByIdRequest) returns (User) {}
-    rpc DeleteUserById(DeleteUserByIdRequest) returns (DeleteResponse) {}
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+    rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdResponse) {}
+    rpc UpdateUserById(UpdateUserByIdRequest) returns (UpdateUserByIdResponse) {}
+    rpc DeleteUserById(DeleteUserByIdRequest) returns (DeleteUserByIdResponse) {}
 
-    // Favorites Management
-    rpc CreateFavorite(CreateFavoriteRequest) returns (Favorite) {}
+    // Country Codes
+    rpc GetCountryCodes(GetCountryCodesRequest) returns (GetCountryCodesResponse) {}
+
+    // Favorites
+    rpc CreateFavorite(CreateFavoriteRequest) returns (CreateFavoriteResponse) {}
     rpc GetFavoritesByUserId(GetFavoritesByUserIdRequest) returns (GetFavoritesByUserIdResponse) {}
-    rpc UpdateFavoriteById(UpdateFavoriteByIdRequest) returns (Favorite) {}
-    rpc DeleteFavoriteById(DeleteFavoriteByIdRequest) returns (DeleteResponse) {}
+    rpc UpdateFavoriteById(UpdateFavoriteByIdRequest) returns (UpdateFavoriteByIdResponse) {}
+    rpc DeleteFavoriteById(DeleteFavoriteByIdRequest) returns (DeleteFavoriteByIdResponse) {}
 
-    // Pockets Management
-    rpc CreatePocket(CreatePocketRequest) returns (Pocket) {}
-    rpc GetPocketsByUserId(GetPocketsByUserIdRequest) returns (GetPocketsByUserIdResponse) {}
-    rpc UpdatePocketById(UpdatePocketByIdRequest) returns (Pocket) {}
-    rpc DeletePocketById(DeletePocketByIdRequest) returns (DeleteResponse) {}
+    // Pockets
+    rpc CreatePocket(CreatePocketRequest) returns (CreatePocketResponse) {}
+    rpc GetPocketsByUserId(GetPocketsByUserIdRequest) returns (GetPocketsByUserIdReesponse) {}
+    rpc UpdatePocketById(UpdatePocketByIdRequest) returns (UpdatePocketByIdResponse) {}
+    rpc DeletePocketById(DeletePocketByIdRequest) returns (DeletePocketByIdResponse) {}
 
-    // 
+    // Verifications
+    rpc GetVerificationsByUserId(GetVerificationsByUserIdRequest) returns (GetVerificationsByUserIdResponse) {}
+    rpc UpdateVerificationByUserId(UpdateVerificationByUserIdRequest) returns (UpdateVerificationByUserIdResponse) {}
 }
-
-
 
 // -----------------------------------------------------------------------------
 // Messages: Data Structures
@@ -51,7 +54,8 @@ message Favorite {
     string id = 1;
     string user_id = 2;
     string favorite_user_id = 3;
-    string alias = 4;
+    string favorite_username = 4;
+    string alias = 5;
 }
 
 // Pocket data structure
@@ -83,6 +87,8 @@ message User {
     
     // @trigger: Seems more natural to bring this information with the 
     // user's information than on it's own in another data structure.
+    
+    // @Bat: I'm not altering verifications here but have them as "none" for now
     string verification_type = 8;
     string verification_status = 9;
 }
@@ -93,14 +99,18 @@ message User {
 
 // @Trigger: This is like the standard way to treat requests and responses.
 
+// Country codes
+message GetCountryCodesRequest {}
+
 // Users
 message CreateUserRequest {
     string email = 1;
     string username = 2;
-    string phone = 3;
-    string first_name = 4;
-    string last_name = 5;
-    string birthdate = 6;
+    string code_id = 3;
+    string phone = 4;
+    string first_name = 5;
+    string last_name = 6;
+    string birthdate = 7;
 }
 
 message GetUserByIdRequest {
@@ -164,19 +174,123 @@ message DeletePocketByIdRequest {
     string id = 1;
 }
 
+//Verifications
+message GetVerificationsByUserIdRequest {
+    string user_id = 1;
+}
+
+message UpdateVerificationByUserIdRequest {
+    string user_id= 1;
+    string type = 2;
+    string status = 3;
+}
+
 // @Trigger: requests above and responses above, to separate them better.
 // -----------------------------------------------------------------------------
 // Messages: Responses
 // -----------------------------------------------------------------------------
 
-message GetFavoritesByUserIdResponse {
-    repeated Favorite favorites = 1;
-}
-
-message GetPocketsByUserIdResponse {
-    repeated Pocket pockets = 1;
-}
-
-message DeleteResponse {
+// Country codes
+message GetCountryCodesResponse {
     bool success = 1;
+    string message = 2;
+    repeated CountryCode codes = 3;
+}
+
+// Users
+message CreateUserResponse {
+    bool success = 1;
+    string message = 2;
+    string user_id = 3;
+}
+
+message GetUserByIdResponse {
+    bool success = 1;
+    string message = 2;
+    string email = 3;
+    string username = 4;
+    string phone = 5;
+    string first_name = 6;
+    string last_name = 7;
+    string birthdate = 8;
+}
+
+message UpdateUserByIdResponse {
+    bool success = 1;
+    string message = 2;
+    string email = 3;
+    string username = 4;
+    string phone = 5;
+    string first_name = 6;
+    string last_name = 7;
+    string birthdate = 8;
+}
+
+message DeleteUserByIdResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+// Favorites
+message CreateFavoriteResponse {
+    bool success = 1;
+    string message = 2;
+    string favorite_id = 3;
+}
+
+message GetFavoritesByUserIdResponse {
+    bool success = 1;
+    string message = 2;
+    repeated Favorite favorites = 3;
+}
+
+message UpdateFavoriteByIdResponse {
+    bool success = 1;
+    string message = 2;
+    string new_alias = 3;
+}
+
+message DeleteFavoriteByIdResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+//Pockets
+message CreatePocketResponse {
+    bool success = 1;
+    string message = 2;
+    string pocket_id = 3;
+}
+
+message GetPocketsByUserIdReesponse {
+    bool success = 1;
+    string message = 2;
+    repeated Pocket pockets = 3;
+}
+
+message UpdatePocketByIdResponse {
+    bool success = 1;
+    string message = 2;
+    string name = 3;
+    string category = 4;
+    int32 max_amount = 5;
+}
+
+message DeletePocketByIdResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+//Verifications
+message GetVerificationsByUserIdResponse {
+    bool success = 1;
+    string message = 2;
+    repeated Verification verifications = 3;
+}
+
+message UpdateVerificationByUserIdResponse {
+    bool success = 1;
+    string message = 2;
+    string type= 3;
+    string status = 4;
 }
