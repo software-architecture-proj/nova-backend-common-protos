@@ -1,0 +1,182 @@
+syntax = "proto3";
+
+option go_package = "github.com/software-architecture-proj/nova-backend-common-protos/gen/go/user_product_service"; // Go package for generated code
+
+package user_product; // Protobuf package name
+
+// -----------------------------------------------------------------------------
+// Service Definition: UserProductService
+// This service handles user profiles, banking products, and customer accounts.
+// -----------------------------------------------------------------------------
+
+// @Trigger: I think we can do all methods here, as doing separate services
+// for pockets, countrycode and verification seems unnecessary to me.
+service UserProductService {
+    // User Management
+    rpc CreateUser(CreateUserRequest) returns (User) {}
+    rpc GetUserById(GetUserByIdRequest) returns (User) {}
+    rpc UpdateUserById(UpdateUserByIdRequest) returns (User) {}
+    rpc DeleteUserById(DeleteUserByIdRequest) returns (DeleteResponse) {}
+
+    // Favorites Management
+    rpc CreateFavorite(CreateFavoriteRequest) returns (Favorite) {}
+    rpc GetFavoritesByUserId(GetFavoritesByUserIdRequest) returns (GetFavoritesByUserIdResponse) {}
+    rpc UpdateFavoriteById(UpdateFavoriteByIdRequest) returns (Favorite) {}
+    rpc DeleteFavoriteById(DeleteFavoriteByIdRequest) returns (DeleteResponse) {}
+
+    // Pockets Management
+    rpc CreatePocket(CreatePocketRequest) returns (Pocket) {}
+    rpc GetPocketsByUserId(GetPocketsByUserIdRequest) returns (GetPocketsByUserIdResponse) {}
+    rpc UpdatePocketById(UpdatePocketByIdRequest) returns (Pocket) {}
+    rpc DeletePocketById(DeletePocketByIdRequest) returns (DeleteResponse) {}
+
+    // 
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Messages: Data Structures
+// -----------------------------------------------------------------------------
+
+// Country code data structure
+message CountryCode {
+    string id = 1;
+    string name = 2;
+    string code = 3;
+}
+
+// Favorite data structure
+message Favorite {
+    string id = 1;
+    string user_id = 2;
+    string favorite_user_id = 3;
+    string alias = 4;
+}
+
+// Pocket data structure
+message Pocket {
+    string id = 1;
+    string user_id = 2;
+    string name = 3;
+    string category = 4;
+    int32 max_amount = 5;
+}
+
+// Verification data structure
+message Verification {
+    string id = 1;
+    string user_id = 2;
+    string type = 3;
+    string status = 4;
+}
+
+// User data structure
+message User {
+    string id = 1;
+    string email = 2;
+    string username = 3;
+    string phone = 4;
+    string first_name = 5;
+    string last_name = 6;
+    string birthdate = 7;
+    
+    // @trigger: Seems more natural to bring this information with the 
+    // user's information than on it's own in another data structure.
+    string verification_type = 8;
+    string verification_status = 9;
+}
+
+// -----------------------------------------------------------------------------
+// Messages: Requests
+// -----------------------------------------------------------------------------
+
+// @Trigger: This is like the standard way to treat requests and responses.
+
+// Users
+message CreateUserRequest {
+    string email = 1;
+    string username = 2;
+    string phone = 3;
+    string first_name = 4;
+    string last_name = 5;
+    string birthdate = 6;
+}
+
+message GetUserByIdRequest {
+    string user_id = 1;
+}
+
+message UpdateUserByIdRequest {
+    string id = 1;
+    string email = 2;
+    string username = 3;
+    string phone = 4;
+    string first_name = 5;
+    string last_name = 6;
+    string birthdate = 7;
+}
+
+message DeleteUserByIdRequest {
+    string id = 1;
+}
+
+// Favorites
+message CreateFavoriteRequest {
+    string user_id = 1;
+    string favorite_user_id = 2;
+    string alias = 3;
+}
+
+message GetFavoritesByUserIdRequest {
+    string user_id = 1;
+}
+
+message UpdateFavoriteByIdRequest {
+    string id = 1;
+    string alias = 2;
+}
+
+message DeleteFavoriteByIdRequest {
+    string id = 1;
+}
+
+//Pockets
+message CreatePocketRequest {
+    string user_id = 1;
+    string name = 2;
+    string category = 3;
+    int32 max_amount = 4;
+}
+
+message GetPocketsByUserIdRequest {
+    string user_id = 1;
+}
+
+message UpdatePocketByIdRequest {
+    string id = 1;
+    string name = 2;
+    string category = 3;
+    int32 max_amount = 4;
+}
+
+message DeletePocketByIdRequest {
+    string id = 1;
+}
+
+// @Trigger: requests above and responses above, to separate them better.
+// -----------------------------------------------------------------------------
+// Messages: Responses
+// -----------------------------------------------------------------------------
+
+message GetFavoritesByUserIdResponse {
+    repeated Favorite favorites = 1;
+}
+
+message GetPocketsByUserIdResponse {
+    repeated Pocket pockets = 1;
+}
+
+message DeleteResponse {
+    bool success = 1;
+}
