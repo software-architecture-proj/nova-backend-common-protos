@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/software-architecture-proj/nova-backend-common-protos/gen/go/auth_service";
+
+// User Login
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    bool success = 1;
+    string message = 2;
+    string email = 3;
+    // string token = 4;  // JWT token
+}
+
+service AuthService {
+    rpc LoginUser(LoginRequest) returns (LoginResponse);
+}
