@@ -455,13 +455,14 @@ func (*GetCountryCodesRequest) Descriptor() ([]byte, []int) {
 // Users
 type CreateUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Username      string                 `protobuf:"bytes,2,opt,name=username,proto3" json:"username,omitempty"`
-	CodeId        string                 `protobuf:"bytes,3,opt,name=code_id,json=codeId,proto3" json:"code_id,omitempty"`
-	Phone         string                 `protobuf:"bytes,4,opt,name=phone,proto3" json:"phone,omitempty"`
-	FirstName     string                 `protobuf:"bytes,5,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
-	LastName      string                 `protobuf:"bytes,6,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
-	Birthdate     string                 `protobuf:"bytes,7,opt,name=birthdate,proto3" json:"birthdate,omitempty"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Username      string                 `protobuf:"bytes,3,opt,name=username,proto3" json:"username,omitempty"`
+	CodeId        string                 `protobuf:"bytes,4,opt,name=code_id,json=codeId,proto3" json:"code_id,omitempty"`
+	Phone         string                 `protobuf:"bytes,5,opt,name=phone,proto3" json:"phone,omitempty"`
+	FirstName     string                 `protobuf:"bytes,6,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
+	LastName      string                 `protobuf:"bytes,7,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
+	Birthdate     string                 `protobuf:"bytes,8,opt,name=birthdate,proto3" json:"birthdate,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -494,6 +495,13 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
 	return file_proto_user_product_service_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CreateUserRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
 }
 
 func (x *CreateUserRequest) GetEmail() string {
@@ -2279,16 +2287,17 @@ const file_proto_user_product_service_proto_rawDesc = "" +
 	"\tbirthdate\x18\a \x01(\tR\tbirthdate\x12+\n" +
 	"\x11verification_type\x18\b \x01(\tR\x10verificationType\x12/\n" +
 	"\x13verification_status\x18\t \x01(\tR\x12verificationStatus\"\x18\n" +
-	"\x16GetCountryCodesRequest\"\xce\x01\n" +
-	"\x11CreateUserRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
-	"\busername\x18\x02 \x01(\tR\busername\x12\x17\n" +
-	"\acode_id\x18\x03 \x01(\tR\x06codeId\x12\x14\n" +
-	"\x05phone\x18\x04 \x01(\tR\x05phone\x12\x1d\n" +
+	"\x16GetCountryCodesRequest\"\xe7\x01\n" +
+	"\x11CreateUserRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x14\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
+	"\busername\x18\x03 \x01(\tR\busername\x12\x17\n" +
+	"\acode_id\x18\x04 \x01(\tR\x06codeId\x12\x14\n" +
+	"\x05phone\x18\x05 \x01(\tR\x05phone\x12\x1d\n" +
 	"\n" +
-	"first_name\x18\x05 \x01(\tR\tfirstName\x12\x1b\n" +
-	"\tlast_name\x18\x06 \x01(\tR\blastName\x12\x1c\n" +
-	"\tbirthdate\x18\a \x01(\tR\tbirthdate\"-\n" +
+	"first_name\x18\x06 \x01(\tR\tfirstName\x12\x1b\n" +
+	"\tlast_name\x18\a \x01(\tR\blastName\x12\x1c\n" +
+	"\tbirthdate\x18\b \x01(\tR\tbirthdate\"-\n" +
 	"\x12GetUserByIdRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xc9\x01\n" +
 	"\x15UpdateUserByIdRequest\x12\x0e\n" +
