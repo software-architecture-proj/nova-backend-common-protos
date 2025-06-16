@@ -9,6 +9,7 @@ message TransferFundsRequest {
   string from_user_id = 1;       // UUID (char(36))
   string to_user_id = 2;         // UUID (char(36))
   uint64 amount = 3;             // In smallest denomination
+  string from_user_email = 4;
 }
 
 message TransferFundsResponse {
