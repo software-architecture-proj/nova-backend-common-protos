@@ -79,7 +79,7 @@ type CreateUserRequest struct {
 	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
 	Phone         string                 `protobuf:"bytes,2,opt,name=phone,proto3" json:"phone,omitempty"`
 	Password      string                 `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
-	LastLog       string                 `protobuf:"bytes,4,opt,name=last_log,json=lastLog,proto3" json:"last_log,omitempty"`
+	Username      string                 `protobuf:"bytes,4,opt,name=username,proto3" json:"username,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -135,9 +135,9 @@ func (x *CreateUserRequest) GetPassword() string {
 	return ""
 }
 
-func (x *CreateUserRequest) GetLastLog() string {
+func (x *CreateUserRequest) GetUsername() string {
 	if x != nil {
-		return x.LastLog
+		return x.Username
 	}
 	return ""
 }
@@ -209,12 +209,12 @@ const file_proto_auth_proto_rawDesc = "" +
 	"\x10proto/auth.proto\x12\x04auth\"@\n" +
 	"\fLoginRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"v\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\"w\n" +
 	"\x11CreateUserRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x14\n" +
 	"\x05phone\x18\x02 \x01(\tR\x05phone\x12\x1a\n" +
-	"\bpassword\x18\x03 \x01(\tR\bpassword\x12\x19\n" +
-	"\blast_log\x18\x04 \x01(\tR\alastLog\"R\n" +
+	"\bpassword\x18\x03 \x01(\tR\bpassword\x12\x1a\n" +
+	"\busername\x18\x04 \x01(\tR\busername\"R\n" +
 	"\bResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12\x12\n" +

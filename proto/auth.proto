@@ -14,7 +14,7 @@ message CreateUserRequest {
     string email = 1;
     string phone = 2;
     string password = 3;
-    string last_log = 4;
+    string username = 4;
 }
 
 message Response {
@@ -27,6 +27,3 @@ service AuthService {
     rpc LoginUser(LoginRequest) returns (Response);
     rpc CreateUser(CreateUserRequest) returns (Response);
 }
-
-
-
